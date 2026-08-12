@@ -1,4 +1,6 @@
-/* style.css */
+/* style.css - الملف النهائي الموحد */
+
+/* 1. التنسيق العام والصفحات الرئيسية (الذكريات) */
 body { 
     font-family: 'Cairo', sans-serif; 
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); 
@@ -9,11 +11,14 @@ body {
     align-items: center; 
     min-height: 100vh; 
 }
+
 h2 { 
     color: #d9534f; 
     margin-bottom: 30px; 
     font-size: 2.2em; 
 }
+
+/* 2. معرض الصور والبطاقات */
 .gallery { 
     display: flex; 
     flex-direction: column; 
@@ -21,6 +26,7 @@ h2 {
     max-width: 600px; 
     width: 100%; 
 }
+
 .card { 
     background: rgba(255, 255, 255, 0.95); 
     padding: 15px; 
@@ -28,6 +34,7 @@ h2 {
     box-shadow: 0 10px 25px rgba(200, 100, 80, 0.15); 
     border: 2px solid #fff5eb; 
 }
+
 .card img, .card video { 
     width: 100%; 
     border-radius: 15px; 
@@ -35,6 +42,7 @@ h2 {
     object-fit: cover; 
     outline: none; 
 }
+
 .caption { 
     margin-top: 15px; 
     font-size: 1.25em; 
@@ -43,12 +51,15 @@ h2 {
     font-weight: bold; 
     line-height: 1.7; 
 }
+
+/* 3. الأزرار */
 .buttons { 
     display: flex; 
     gap: 15px; 
     margin-top: 40px; 
     margin-bottom: 20px; 
 }
+
 .btn { 
     padding: 12px 35px; 
     background-color: #ff7e67; 
@@ -60,14 +71,55 @@ h2 {
     box-shadow: 0 6px 20px rgba(255, 126, 103, 0.4); 
     transition: transform 0.3s ease, background 0.3s ease; 
 }
+
 .btn:hover { 
     background-color: #e66b55; 
     transform: translateY(-4px); 
 }
+
 .btn-back { 
     background-color: #7b7b7b; 
     box-shadow: 0 6px 20px rgba(123, 123, 123, 0.4); 
 }
+
 .btn-back:hover { 
     background-color: #5a5a5a; 
+}
+
+/* 4. تنسيق صفحة البداية (Welcome.html) */
+.welcome-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.welcome-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(200, 100, 80, 0.2);
+    border: 2px solid #fff5eb;
+    max-width: 400px;
+    margin: 20px;
+}
+
+.welcome-card h1 {
+    color: #d9534f;
+    margin: 20px 0;
+    font-size: 1.8em;
+}
+
+.welcome-card p {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.heart-icon {
+    font-size: 3em;
 }
