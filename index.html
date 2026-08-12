@@ -46,11 +46,16 @@
 
     <script>
         function checkPass() {
-            var pass = document.getElementById('passInput').value;
+            var pass = document.getElementById('passInput').value.trim();
+            
             if(pass === "20/8/2006") { 
-                document.getElementById('bg-music').play();
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
+                
+                var music = document.getElementById('bg-music');
+                music.play().catch(function(error) {
+                    console.log("Audio autoplay blocked:", error);
+                });
             } else {
                 document.getElementById('errorMsg').style.display = 'block';
             }
