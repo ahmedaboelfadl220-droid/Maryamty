@@ -3,73 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ذكرياتنا الحلوة - أحمد وهاجر</title>
+    <title>رحلة ذكرياتنا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            overflow: hidden; /* عشان نمنع السكرول المزدوج */
+            font-family: 'Cairo', sans-serif; 
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            display: flex; 
+            flex-direction: column;
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        #start-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+        /* تصميم شريط الصوت الثابت فوق */
+        .music-bar {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 10px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             z-index: 100;
         }
-        .play-btn {
-            padding: 15px 40px;
-            background-color: #d81b60;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.5em;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(216,27,96,0.4);
-            transition: transform 0.3s ease;
+        audio {
+            width: 100%;
+            max-width: 400px;
+            outline: none;
+            border-radius: 20px;
         }
-        .play-btn:hover {
-            transform: translateY(-3px);
-            background-color: #ad1457;
+        /* البرواز اللي هيعرض الصفحات */
+        .content-frame {
+            flex-grow: 1;
+            border: none;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
 
-    <div id="start-screen">
-        <h1 style="color: #d81b60; margin-bottom: 20px;">في حاجة بسيطة ناقصة... ❤️</h1>
-        <button class="play-btn" onclick="startExperience()">دوسى هنا الأول ✨</button>
+    <!-- شريط الأغنية اللي هيفضل شغال طول الوقت -->
+    <div class="music-bar">
+        <audio controls loop>
+            <source src="song.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
     </div>
 
-    <audio id="bg-music" loop>
-        <source src="song.mp3" type="audio/mp3">
-    </audio>
-
-    <iframe id="content-frame" src=""></iframe>
-
-    <script>
-        function startExperience() {
-            document.getElementById('start-screen').style.display = 'none';
-            document.getElementById('bg-music').play();
-            document.getElementById('content-frame').src = 'welcome.html';
-        }
-    </script>
+    <!-- البرواز اللي هيعرض بداية الرحلة -->
+    <iframe class="content-frame" src="start.html" name="memoryFrame"></iframe>
 
 </body>
 </html>
