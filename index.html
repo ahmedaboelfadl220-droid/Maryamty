@@ -6,87 +6,31 @@
     <title>رحلة ذكرياتنا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            overflow: hidden; 
-            font-family: 'Cairo', sans-serif; 
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        }
-
-        /* دي الشاشة اللي هتظهر في الأول وتطلب منها تدوس */
-        #start-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            cursor: pointer;
-            text-align: center;
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        }
-
-        #start-screen h1 {
-            color: #d9534f;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-
-        #start-screen p {
-            color: #555;
-            font-size: 1.3em;
-            font-weight: bold;
-            animation: pulse 1.5s infinite; /* حركة نبض خفيفة للفت الانتباه */
-        }
-
-        /* كود حركة النبض */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* البرواز اللي جواه الموقع (هيكون مخفي لحد ما تدوس) */
-        #main-content {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: none; 
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Cairo', sans-serif; background: #0f172a; }
+        #start-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; cursor: pointer; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); }
+        h1 { color: #f472b6; font-size: 2em; margin-bottom: 20px; }
+        p { color: #cbd5e1; font-size: 1.3em; font-weight: bold; }
+        #main-content { width: 100%; height: 100%; border: none; display: none; }
     </style>
 </head>
 <body>
 
-    <!-- ملف الصوت (مخفي تماماً ومش هيظهرله شريط) -->
     <audio id="bg-music" loop>
         <source src="song.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- شاشة البداية اللي هتدوس عليها -->
     <div id="start-screen" onclick="startMagic()">
         <div style="font-size: 4em; margin-bottom: 20px;">✨</div>
         <h1>ناقص خطوة بسيطة ونبدأ..</h1>
-        <p>اضغطي في أي مكان على الشاشة 👆</p>
+        <p>دوسي يابت في ايي حته خلصينا بقى 👆</p>
     </div>
 
-    <!-- الموقع نفسه هيشتغل هنا جوا البرواز ده -->
-    <!-- لاحظ إني خليته يفتح start.html اللي عملناه الخطوة اللي فاتت -->
     <iframe id="main-content" src="start.html" name="contentFrame"></iframe>
 
-    <!-- سكريبت الأوامر (الذكاء بتاع الصفحة) -->
     <script>
         function startMagic() {
-            // 1. شغل الأغنية
             document.getElementById('bg-music').play();
-            // 2. اخفي شاشة البداية
             document.getElementById('start-screen').style.display = 'none';
-            // 3. اظهر الموقع الحقيقي
             document.getElementById('main-content').style.display = 'block';
         }
     </script>
