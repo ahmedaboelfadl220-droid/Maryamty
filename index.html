@@ -15,7 +15,6 @@
             background: #0f172a; 
         }
         
-        /* شاشة الدخول بالباسورد */
         #login-screen { 
             position: fixed; 
             top: 0; 
@@ -54,7 +53,6 @@
         }
         button:hover { transform: scale(1.05); }
 
-        /* برواز الموقع الأساسي اللي جواه الأغنية شغالة والصفحات بتقلب */
         #main-frame { 
             width: 100%; 
             height: 100%; 
@@ -65,20 +63,17 @@
 </head>
 <body>
 
-    <!-- مشغل الأغنية الثابت في الخلفية -->
     <audio id="bg-music" loop>
         <source src="song.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- شاشة الباسورد -->
     <div id="login-screen">
         <h1 style="color: #f472b6; margin-bottom: 25px;">أدخلي الباسورد يا مريمتي 🔐</h1>
         <input type="text" id="passInput" placeholder="تاريخ ميلادك (يوم/شهر/سنة)">
-        <button onclick="checkPass()">دوسي يا سوكه 🚀</button>
+        <button onclick="checkPass()">دوسي يا مريومتي 🚀</button>
         <p id="errorMsg" style="color: #fb7185; display: none; margin-top: 15px;">الباسورد غلط يابت! حاولي تاني 🙊</p>
     </div>
 
-    <!-- البرواز اللي هيفتح الموقع جواه -->
     <iframe id="main-frame" src="start.html" name="contentFrame"></iframe>
 
     <script>
@@ -86,13 +81,11 @@
             var pass = document.getElementById('passInput').value.trim();
             
             if(pass === "20/8/2006") { 
-                // تشغيل الأغنية فوراً
                 var music = document.getElementById('bg-music');
                 music.play().catch(function(error) {
                     console.log("Audio play error:", error);
                 });
                 
-                // إخفاء شاشة الباسورد وإظهار الـ iframe اللي جواه الموقع
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('main-frame').style.display = 'block';
             } else {
