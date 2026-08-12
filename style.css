@@ -1,24 +1,23 @@
-/* style.css - الملف النهائي الموحد */
-
-/* 1. التنسيق العام والصفحات الرئيسية (الذكريات) */
+/* style.css - النسخة المحسنة والأنضف */
 body { 
     font-family: 'Cairo', sans-serif; 
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); 
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%); 
     margin: 0; 
     padding: 20px; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     min-height: 100vh; 
+    color: #2d3436;
 }
 
 h2 { 
-    color: #d9534f; 
+    color: #d63031; 
     margin-bottom: 30px; 
     font-size: 2.2em; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 2. معرض الصور والبطاقات */
 .gallery { 
     display: flex; 
     flex-direction: column; 
@@ -28,31 +27,32 @@ h2 {
 }
 
 .card { 
-    background: rgba(255, 255, 255, 0.95); 
-    padding: 15px; 
+    background: rgba(255, 255, 255, 0.92); 
+    backdrop-filter: blur(10px);
+    padding: 20px; 
     border-radius: 25px; 
-    box-shadow: 0 10px 25px rgba(200, 100, 80, 0.15); 
-    border: 2px solid #fff5eb; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.8); 
 }
 
 .card img, .card video { 
     width: 100%; 
-    border-radius: 15px; 
+    border-radius: 18px; 
     max-height: 450px; 
     object-fit: cover; 
     outline: none; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .caption { 
-    margin-top: 15px; 
-    font-size: 1.25em; 
+    margin-top: 18px; 
+    font-size: 1.2em; 
     text-align: center; 
-    color: #444; 
-    font-weight: bold; 
-    line-height: 1.7; 
+    color: #2d3436; 
+    font-weight: 700; 
+    line-height: 1.8; 
 }
 
-/* 3. الأزرار */
 .buttons { 
     display: flex; 
     gap: 15px; 
@@ -62,64 +62,81 @@ h2 {
 
 .btn { 
     padding: 12px 35px; 
-    background-color: #ff7e67; 
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
     color: white; 
     text-decoration: none; 
     border-radius: 30px; 
     font-weight: bold; 
     font-size: 1.2em; 
-    box-shadow: 0 6px 20px rgba(255, 126, 103, 0.4); 
-    transition: transform 0.3s ease, background 0.3s ease; 
+    box-shadow: 0 6px 20px rgba(255, 117, 140, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .btn:hover { 
-    background-color: #e66b55; 
     transform: translateY(-4px); 
+    box-shadow: 0 10px 25px rgba(255, 117, 140, 0.6);
 }
 
 .btn-back { 
-    background-color: #7b7b7b; 
-    box-shadow: 0 6px 20px rgba(123, 123, 123, 0.4); 
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #2d3436;
+    box-shadow: 0 6px 20px rgba(161, 196, 253, 0.4); 
 }
 
 .btn-back:hover { 
-    background-color: #5a5a5a; 
+    box-shadow: 0 10px 25px rgba(161, 196, 253, 0.6);
 }
 
-/* 4. تنسيق صفحة البداية (Welcome.html) */
+/* تنسيق صفحة البداية والرسائل (Welcome & Ending) */
 .welcome-body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);
 }
 
 .welcome-card {
     background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    padding: 45px 35px 55px 35px; /* زودنا المسافة تحت عشان الإهداء */
+    border-radius: 35px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(200, 100, 80, 0.2);
-    border: 2px solid #fff5eb;
-    max-width: 400px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    max-width: 550px;
     margin: 20px;
+    position: relative; /* عشان الإهداء يثبت في الكورنر */
 }
 
 .welcome-card h1 {
-    color: #d9534f;
-    margin: 20px 0;
-    font-size: 1.8em;
+    color: #d63031;
+    margin: 15px 0 25px 0;
+    font-size: 2em;
 }
 
 .welcome-card p {
-    color: #555;
+    color: #4b6584;
     font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    text-align: right;
 }
 
 .heart-icon {
-    font-size: 3em;
+    font-size: 3.5em;
+    margin-bottom: 10px;
 }
+
+/* تنسيق الإهداء في الكورنر الشمالي تحت خالص */
+.signature {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    font-size: 0.9em;
+    color: #b2bec3;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
