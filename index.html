@@ -1,13 +1,29 @@
-    <!-- ده الجزء اللي بيقرا ملف الأغنية وبيخليها تعيد نفسها (loop) -->
-    <audio id="bg-music" loop>
-        <source src="song.mp3" type="audio/mp3">
-    </audio>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة ذكرياتنا</title>
+    <!-- خط جميل للعناوين -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- ربط بملف الستايل المشترك -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="welcome-body">
 
-    <!-- وده سطر الجافا سكريبت اللي بيخلي الأغنية تشتغل أول ما تدوس على الزرار -->
-    <script>
-        function startExperience() {
-            document.getElementById('start-screen').style.display = 'none';
-            document.getElementById('bg-music').play(); /* السطر ده اللي بيشغل الأغنية */
-            document.getElementById('content-frame').src = 'welcome.html';
-        }
-    </script>
+    <div class="welcome-card">
+        <div class="heart-icon">🤎</div>
+        <h1>أهلاً يا صديقة العمر</h1>
+        <p>مجموعة من أحلى الذكريات واللحظات اللي عشناها سوا.. <br> جاهزة نرجع بالزمن؟</p>
+        
+        <!-- كود الأغنية -->
+        <audio controls loop style="width: 100%; margin-bottom: 25px; border-radius: 30px; outline: none;">
+            <source src="song.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+
+        <a href="page1.html" class="btn">يلا نبدأ الرحلة 🚀</a>
+    </div>
+
+</body>
+</html>
